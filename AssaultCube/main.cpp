@@ -9,7 +9,11 @@ int main()
 	int armor = 9999;
 	int ammo = 9999;
 	int fireRate = 0;
-	DWORD pID, baseModule, localPlayerPtr, WeaponPtr;
+	DWORD pID, 
+		baseModule, 
+		localPlayerPtr, 
+		WeaponPtr, 
+		EntityList;
 
 	pID = GetProcessID(L"ac_client.exe");
 
@@ -23,6 +27,7 @@ int main()
 
 	ReadProcessMemory(handle, (LPCVOID)(baseModule + 0x17E0A8), &localPlayerPtr, sizeof(localPlayerPtr), nullptr);
 	ReadProcessMemory(handle, (LPCVOID)(baseModule + 0x0017E0A8), &WeaponPtr, sizeof(WeaponPtr), nullptr);
+	ReadProcessMemory(handle, (LPCVOID)(baseModule + 0x18EFDC), &EntityList, sizeof(EntityList), nullptr);
 
 	while (true)
 	{
