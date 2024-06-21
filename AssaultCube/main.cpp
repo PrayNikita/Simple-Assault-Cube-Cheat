@@ -46,6 +46,9 @@ int main()
 
 		//RapidFire
 		WriteProcessMemory(handle, (LPVOID)(WeaponPtr + 0x164), &fireRate, sizeof(fireRate), nullptr);
+
+		WriteProcessMemory(handle, (LPVOID)(WeaponPtr + 0x160), &fireRate, sizeof(fireRate), nullptr);
+
 	}
 
 
